@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="adatbazisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fazon">
+          <Key>
+            <PropertyRef Name="FazonID" />
+          </Key>
+          <Property Name="FazonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nem" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Méret">
+          <Key>
+            <PropertyRef Name="MéretID" />
+          </Key>
+          <Property Name="MéretID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Név" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rendelés">
+          <Key>
+            <PropertyRef Name="RendelésID" />
+          </Key>
+          <Property Name="RendelésID" Type="int" Nullable="false" />
+          <Property Name="TermékFK" Type="int" />
+          <Property Name="Név" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ruhadarab">
+          <Key>
+            <PropertyRef Name="RuhadarabID" />
+          </Key>
+          <Property Name="RuhadarabID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Név" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ár" Type="int" />
+        </EntityType>
+        <EntityType Name="Szín">
+          <Key>
+            <PropertyRef Name="SzínID" />
+          </Key>
+          <Property Name="SzínID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Név" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Termék">
+          <Key>
+            <PropertyRef Name="TermékID" />
+          </Key>
+          <Property Name="TermékID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RuhadarabFK" Type="int" />
+          <Property Name="MéretFK" Type="int" />
+          <Property Name="SzínFK" Type="int" />
+          <Property Name="FazonFK" Type="int" />
+        </EntityType>
+        <Association Name="FK_Rendelés_ToTable">
+          <End Role="Termék" Type="Self.Termék" Multiplicity="0..1" />
+          <End Role="Rendelés" Type="Self.Rendelés" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Termék">
+              <PropertyRef Name="TermékID" />
+            </Principal>
+            <Dependent Role="Rendelés">
+              <PropertyRef Name="TermékFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Termék_ToTable">
+          <End Role="Fazon" Type="Self.Fazon" Multiplicity="0..1" />
+          <End Role="Termék" Type="Self.Termék" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fazon">
+              <PropertyRef Name="FazonID" />
+            </Principal>
+            <Dependent Role="Termék">
+              <PropertyRef Name="FazonFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Termék_ToTable_1">
+          <End Role="Ruhadarab" Type="Self.Ruhadarab" Multiplicity="0..1" />
+          <End Role="Termék" Type="Self.Termék" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ruhadarab">
+              <PropertyRef Name="RuhadarabID" />
+            </Principal>
+            <Dependent Role="Termék">
+              <PropertyRef Name="RuhadarabFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Termék_ToTable_2">
+          <End Role="Méret" Type="Self.Méret" Multiplicity="0..1" />
+          <End Role="Termék" Type="Self.Termék" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Méret">
+              <PropertyRef Name="MéretID" />
+            </Principal>
+            <Dependent Role="Termék">
+              <PropertyRef Name="MéretFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Termék_ToTable_3">
+          <End Role="Szín" Type="Self.Szín" Multiplicity="0..1" />
+          <End Role="Termék" Type="Self.Termék" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Szín">
+              <PropertyRef Name="SzínID" />
+            </Principal>
+            <Dependent Role="Termék">
+              <PropertyRef Name="SzínFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="adatbazisModelStoreContainer">
+          <EntitySet Name="Fazon" EntityType="Self.Fazon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Méret" EntityType="Self.Méret" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rendelés" EntityType="Self.Rendelés" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ruhadarab" EntityType="Self.Ruhadarab" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Szín" EntityType="Self.Szín" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Termék" EntityType="Self.Termék" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Rendelés_ToTable" Association="Self.FK_Rendelés_ToTable">
+            <End Role="Termék" EntitySet="Termék" />
+            <End Role="Rendelés" EntitySet="Rendelés" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Termék_ToTable" Association="Self.FK_Termék_ToTable">
+            <End Role="Fazon" EntitySet="Fazon" />
+            <End Role="Termék" EntitySet="Termék" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Termék_ToTable_1" Association="Self.FK_Termék_ToTable_1">
+            <End Role="Ruhadarab" EntitySet="Ruhadarab" />
+            <End Role="Termék" EntitySet="Termék" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Termék_ToTable_2" Association="Self.FK_Termék_ToTable_2">
+            <End Role="Méret" EntitySet="Méret" />
+            <End Role="Termék" EntitySet="Termék" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Termék_ToTable_3" Association="Self.FK_Termék_ToTable_3">
+            <End Role="Szín" EntitySet="Szín" />
+            <End Role="Termék" EntitySet="Termék" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="adatbazisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Fazon">
+          <Key>
+            <PropertyRef Name="FazonID" />
+          </Key>
+          <Property Name="FazonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Termék" Relationship="Self.FK_Termék_ToTable" FromRole="Fazon" ToRole="Termék" />
+        </EntityType>
+        <EntityType Name="Méret">
+          <Key>
+            <PropertyRef Name="MéretID" />
+          </Key>
+          <Property Name="MéretID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Név" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Termék" Relationship="Self.FK_Termék_ToTable_2" FromRole="Méret" ToRole="Termék" />
+        </EntityType>
+        <EntityType Name="Rendelés">
+          <Key>
+            <PropertyRef Name="RendelésID" />
+          </Key>
+          <Property Name="RendelésID" Type="Int32" Nullable="false" />
+          <Property Name="TermékFK" Type="Int32" />
+          <Property Name="Név" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Termék" Relationship="Self.FK_Rendelés_ToTable" FromRole="Rendelés" ToRole="Termék" />
+        </EntityType>
+        <EntityType Name="Ruhadarab">
+          <Key>
+            <PropertyRef Name="RuhadarabID" />
+          </Key>
+          <Property Name="RuhadarabID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Név" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ár" Type="Int32" />
+          <NavigationProperty Name="Termék" Relationship="Self.FK_Termék_ToTable_1" FromRole="Ruhadarab" ToRole="Termék" />
+        </EntityType>
+        <EntityType Name="Szín">
+          <Key>
+            <PropertyRef Name="SzínID" />
+          </Key>
+          <Property Name="SzínID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Név" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Termék" Relationship="Self.FK_Termék_ToTable_3" FromRole="Szín" ToRole="Termék" />
+        </EntityType>
+        <EntityType Name="Termék">
+          <Key>
+            <PropertyRef Name="TermékID" />
+          </Key>
+          <Property Name="TermékID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RuhadarabFK" Type="Int32" />
+          <Property Name="MéretFK" Type="Int32" />
+          <Property Name="SzínFK" Type="Int32" />
+          <Property Name="FazonFK" Type="Int32" />
+          <NavigationProperty Name="Fazon" Relationship="Self.FK_Termék_ToTable" FromRole="Termék" ToRole="Fazon" />
+          <NavigationProperty Name="Méret" Relationship="Self.FK_Termék_ToTable_2" FromRole="Termék" ToRole="Méret" />
+          <NavigationProperty Name="Rendelés" Relationship="Self.FK_Rendelés_ToTable" FromRole="Termék" ToRole="Rendelés" />
+          <NavigationProperty Name="Ruhadarab" Relationship="Self.FK_Termék_ToTable_1" FromRole="Termék" ToRole="Ruhadarab" />
+          <NavigationProperty Name="Szín" Relationship="Self.FK_Termék_ToTable_3" FromRole="Termék" ToRole="Szín" />
+        </EntityType>
+        <Association Name="FK_Termék_ToTable">
+          <End Role="Fazon" Type="Self.Fazon" Multiplicity="0..1" />
+          <End Role="Termék" Type="Self.Termék" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fazon">
+              <PropertyRef Name="FazonID" />
+            </Principal>
+            <Dependent Role="Termék">
+              <PropertyRef Name="FazonFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Termék_ToTable_2">
+          <End Role="Méret" Type="Self.Méret" Multiplicity="0..1" />
+          <End Role="Termék" Type="Self.Termék" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Méret">
+              <PropertyRef Name="MéretID" />
+            </Principal>
+            <Dependent Role="Termék">
+              <PropertyRef Name="MéretFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rendelés_ToTable">
+          <End Role="Termék" Type="Self.Termék" Multiplicity="0..1" />
+          <End Role="Rendelés" Type="Self.Rendelés" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Termék">
+              <PropertyRef Name="TermékID" />
+            </Principal>
+            <Dependent Role="Rendelés">
+              <PropertyRef Name="TermékFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Termék_ToTable_1">
+          <End Role="Ruhadarab" Type="Self.Ruhadarab" Multiplicity="0..1" />
+          <End Role="Termék" Type="Self.Termék" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ruhadarab">
+              <PropertyRef Name="RuhadarabID" />
+            </Principal>
+            <Dependent Role="Termék">
+              <PropertyRef Name="RuhadarabFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Termék_ToTable_3">
+          <End Role="Szín" Type="Self.Szín" Multiplicity="0..1" />
+          <End Role="Termék" Type="Self.Termék" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Szín">
+              <PropertyRef Name="SzínID" />
+            </Principal>
+            <Dependent Role="Termék">
+              <PropertyRef Name="SzínFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="adatbazisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fazon" EntityType="Self.Fazon" />
+          <EntitySet Name="Méret" EntityType="Self.Méret" />
+          <EntitySet Name="Rendelés" EntityType="Self.Rendelés" />
+          <EntitySet Name="Ruhadarab" EntityType="Self.Ruhadarab" />
+          <EntitySet Name="Szín" EntityType="Self.Szín" />
+          <EntitySet Name="Termék" EntityType="Self.Termék" />
+          <AssociationSet Name="FK_Termék_ToTable" Association="Self.FK_Termék_ToTable">
+            <End Role="Fazon" EntitySet="Fazon" />
+            <End Role="Termék" EntitySet="Termék" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Termék_ToTable_2" Association="Self.FK_Termék_ToTable_2">
+            <End Role="Méret" EntitySet="Méret" />
+            <End Role="Termék" EntitySet="Termék" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rendelés_ToTable" Association="Self.FK_Rendelés_ToTable">
+            <End Role="Termék" EntitySet="Termék" />
+            <End Role="Rendelés" EntitySet="Rendelés" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Termék_ToTable_1" Association="Self.FK_Termék_ToTable_1">
+            <End Role="Ruhadarab" EntitySet="Ruhadarab" />
+            <End Role="Termék" EntitySet="Termék" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Termék_ToTable_3" Association="Self.FK_Termék_ToTable_3">
+            <End Role="Szín" EntitySet="Szín" />
+            <End Role="Termék" EntitySet="Termék" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="adatbazisModelStoreContainer" CdmEntityContainer="adatbazisEntities">
+          <EntitySetMapping Name="Fazon">
+            <EntityTypeMapping TypeName="adatbazisModel.Fazon">
+              <MappingFragment StoreEntitySet="Fazon">
+                <ScalarProperty Name="FazonID" ColumnName="FazonID" />
+                <ScalarProperty Name="Nem" ColumnName="Nem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Méret">
+            <EntityTypeMapping TypeName="adatbazisModel.Méret">
+              <MappingFragment StoreEntitySet="Méret">
+                <ScalarProperty Name="MéretID" ColumnName="MéretID" />
+                <ScalarProperty Name="Név" ColumnName="Név" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rendelés">
+            <EntityTypeMapping TypeName="adatbazisModel.Rendelés">
+              <MappingFragment StoreEntitySet="Rendelés">
+                <ScalarProperty Name="RendelésID" ColumnName="RendelésID" />
+                <ScalarProperty Name="TermékFK" ColumnName="TermékFK" />
+                <ScalarProperty Name="Név" ColumnName="Név" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ruhadarab">
+            <EntityTypeMapping TypeName="adatbazisModel.Ruhadarab">
+              <MappingFragment StoreEntitySet="Ruhadarab">
+                <ScalarProperty Name="RuhadarabID" ColumnName="RuhadarabID" />
+                <ScalarProperty Name="Név" ColumnName="Név" />
+                <ScalarProperty Name="Ár" ColumnName="Ár" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Szín">
+            <EntityTypeMapping TypeName="adatbazisModel.Szín">
+              <MappingFragment StoreEntitySet="Szín">
+                <ScalarProperty Name="SzínID" ColumnName="SzínID" />
+                <ScalarProperty Name="Név" ColumnName="Név" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Termék">
+            <EntityTypeMapping TypeName="adatbazisModel.Termék">
+              <MappingFragment StoreEntitySet="Termék">
+                <ScalarProperty Name="TermékID" ColumnName="TermékID" />
+                <ScalarProperty Name="RuhadarabFK" ColumnName="RuhadarabFK" />
+                <ScalarProperty Name="MéretFK" ColumnName="MéretFK" />
+                <ScalarProperty Name="SzínFK" ColumnName="SzínFK" />
+                <ScalarProperty Name="FazonFK" ColumnName="FazonFK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
