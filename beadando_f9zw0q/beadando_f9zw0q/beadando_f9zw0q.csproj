@@ -108,6 +108,12 @@
     <Compile Include="Rendelés.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Rendelés_ablak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rendelés_ablak.Designer.cs">
+      <DependentUpon>Rendelés_ablak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ruhadarab.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
