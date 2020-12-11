@@ -21,21 +21,21 @@ namespace beadando_f9zw0q
         {
             InitializeComponent();
 
-            //listBox_fazon.DataSource = context.Fazon.ToList();
-            //listBox_fazon.DisplayMember = "Nem";
-            //listBox_fazon.SelectedItem = null;
+            listBox_fazon.DataSource = context.Fazon.ToList();
+            listBox_fazon.DisplayMember = "Nem";
+            listBox_fazon.SelectedItem = null;
 
-            //listBox_méret.DataSource = context.Méret.ToList();
-            //listBox_méret.DisplayMember = "Név";
-            //listBox_méret.SelectedItem = null;
+            listBox_méret.DataSource = context.Méret.ToList();
+            listBox_méret.DisplayMember = "Név";
+            listBox_méret.SelectedItem = null;
 
-            //listBox_szín.DataSource = context.Szín.ToList();
-            //listBox_szín.DisplayMember = "Név";
-            //listBox_szín.SelectedItem = null;
+            listBox_szín.DataSource = context.Szín.ToList();
+            listBox_szín.DisplayMember = "Név";
+            listBox_szín.SelectedItem = null;
 
-            //listBox_tipus.DataSource = context.Ruhadarab.ToList();
-            //listBox_tipus.DisplayMember = "Név";
-            //listBox_tipus.SelectedItem = null;
+            listBox_tipus.DataSource = context.Ruhadarab.ToList();
+            listBox_tipus.DisplayMember = "Név";
+            listBox_tipus.SelectedItem = null;
 
             textBox_ár.Text = null;
         }
