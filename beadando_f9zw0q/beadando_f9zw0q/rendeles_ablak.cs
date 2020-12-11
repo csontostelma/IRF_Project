@@ -62,74 +62,70 @@ namespace beadando_f9zw0q
             this.Validate();
         }
 
-        //private void button_megrendel_Click(object sender, EventArgs e)
-        //{
-        //    if (MessageBox.Show("Biztosan meg szeretné rendelni az alábbi terméket?", "Megerősítés", MessageBoxButtons.YesNo) == DialogResult.Yes)
-        //    {
-        //        if (gombmegnyomva == true)
-        //        {
-        //            var fazon = (Fazon)listBox_fazon.SelectedItem;
-        //            var ruhadarab = (Ruhadarab)listBox_tipus.SelectedItem;
-        //            var méret = (Méret)listBox_méret.SelectedItem;
-        //            var szín = (Szín)listBox_szín.SelectedItem;
+        private void button_megrendel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Biztosan meg szeretné rendelni az alábbi terméket?", "Megerősítés", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (gombmegnyomva == true)
+                {
+                    var fazon = (Fazon)listBox_fazon.SelectedItem;
+                    var ruhadarab = (Ruhadarab)listBox_tipus.SelectedItem;
+                    var méret = (Méret)listBox_méret.SelectedItem;
+                    var szín = (Szín)listBox_szín.SelectedItem;
 
-        //            Termék t = new Termék();
-        //            t.FazonFK = fazon.FazonID;
-        //            t.RuhadarabFK = ruhadarab.RuhadarabID;
-        //            t.MéretFK = méret.MéretID;
-        //            t.SzínFK = szín.SzínID;
-        //            context.Termék.Add(t);
-        //            try
-        //            {
-        //                context.SaveChanges();
-        //            }
-        //            catch (Exception ex)
-        //            {
+                    Termék t = new Termék();
+                    t.FazonFK = fazon.FazonID;
+                    t.RuhadarabFK = ruhadarab.RuhadarabID;
+                    t.MéretFK = méret.MéretID;
+                    t.SzínFK = szín.SzínID;
+                    context.Termék.Add(t);
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
 
-        //                MessageBox.Show(ex.Message);
-        //            }
+                        MessageBox.Show(ex.Message);
+                    }
 
-        //            Rendelés r = new Rendelés();
-        //            r.TermékFK = t.TermékID;
-        //            r.Név = textBox_nev.Text;
-        //            context.Rendelés.Add(r);
-        //            try
-        //            {
-        //                context.SaveChanges();
-        //            }
-        //            catch (Exception ex)
-        //            {
+                    Rendelés r = new Rendelés();
+                    r.TermékFK = t.TermékID;
+                    r.Név = textBox_nev.Text;
+                    context.Rendelés.Add(r);
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
 
-        //                MessageBox.Show(ex.Message);
-        //            }
+                        MessageBox.Show(ex.Message);
+                    }
 
-        //        }
-        //    }
-        //}
+                }
+            }
+        }
 
-        //private void button_megrendel_MouseClick(object sender, MouseEventArgs e)
-        //{
-        //    textBox_nev.Clear();
-        //    textBox_nev.BackColor = default;
-        //    listBox_fazon.SelectedItem = default;
-        //    listBox_tipus.SelectedItem = default;
-        //    listBox_méret.SelectedItem = default;
-        //    listBox_szín.SelectedItem = default;
-        //    textBox_ár.Clear();
-        //    textBox_nev.Enabled = true;
+        private void button_megrendel_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBox_nev.Clear();
+            textBox_nev.BackColor = default;
+            listBox_fazon.SelectedItem = default;
+            listBox_tipus.SelectedItem = default;
+            listBox_méret.SelectedItem = default;
+            listBox_szín.SelectedItem = default;
+            textBox_ár.Clear();
+            textBox_nev.Enabled = true;
 
-        //    MessageBox.Show("Rendelését rögzítettük!");
-        //}
+            MessageBox.Show("Rendelését rögzítettük!");
+        }
 
-        //private void listBox_tipus_MouseClick(object sender, MouseEventArgs e)
-        //{
-        //    var ruhadarab = (Ruhadarab)listBox_tipus.SelectedItem;
-        //    textBox_ár.Text = ruhadarab.Ár.ToString();
-        //}
+        private void listBox_tipus_MouseClick(object sender, MouseEventArgs e)
+        {
+            var ruhadarab = (Ruhadarab)listBox_tipus.SelectedItem;
+            textBox_ár.Text = ruhadarab.Ár.ToString();
+        }
 
-        //private void button_vissza_Click(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }
