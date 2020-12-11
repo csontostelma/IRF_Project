@@ -47,29 +47,28 @@
             // 
             // button_vissza
             // 
-            this.button_vissza.Location = new System.Drawing.Point(699, 390);
+            this.button_vissza.Location = new System.Drawing.Point(580, 384);
             this.button_vissza.Name = "button_vissza";
-            this.button_vissza.Size = new System.Drawing.Size(106, 37);
+            this.button_vissza.Size = new System.Drawing.Size(99, 42);
             this.button_vissza.TabIndex = 43;
             this.button_vissza.Text = "Vissza";
             this.button_vissza.UseVisualStyleBackColor = true;
-
             // 
             // button_megrendel
             // 
-            this.button_megrendel.Location = new System.Drawing.Point(548, 390);
+            this.button_megrendel.Location = new System.Drawing.Point(429, 384);
             this.button_megrendel.Name = "button_megrendel";
-            this.button_megrendel.Size = new System.Drawing.Size(106, 37);
+            this.button_megrendel.Size = new System.Drawing.Size(99, 42);
             this.button_megrendel.TabIndex = 42;
             this.button_megrendel.Text = "Megrendel";
             this.button_megrendel.UseVisualStyleBackColor = true;
-
-
+            this.button_megrendel.Click += new System.EventHandler(this.button_megrendel_Click);
+            this.button_megrendel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button_megrendel_MouseClick);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(176, 407);
+            this.label7.Location = new System.Drawing.Point(182, 403);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 20);
             this.label7.TabIndex = 41;
@@ -78,7 +77,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 368);
+            this.label6.Location = new System.Drawing.Point(36, 364);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 40;
@@ -86,24 +85,24 @@
             // 
             // textBox_ár
             // 
-            this.textBox_ár.Location = new System.Drawing.Point(25, 404);
+            this.textBox_ár.Location = new System.Drawing.Point(31, 400);
             this.textBox_ár.Name = "textBox_ár";
-            this.textBox_ár.Size = new System.Drawing.Size(145, 26);
+            this.textBox_ár.Size = new System.Drawing.Size(138, 26);
             this.textBox_ár.TabIndex = 39;
             // 
             // listBox_méret
             // 
             this.listBox_méret.FormattingEnabled = true;
             this.listBox_méret.ItemHeight = 20;
-            this.listBox_méret.Location = new System.Drawing.Point(673, 222);
+            this.listBox_méret.Location = new System.Drawing.Point(554, 218);
             this.listBox_méret.Name = "listBox_méret";
-            this.listBox_méret.Size = new System.Drawing.Size(132, 124);
+            this.listBox_méret.Size = new System.Drawing.Size(125, 124);
             this.listBox_méret.TabIndex = 38;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(669, 170);
+            this.label5.Location = new System.Drawing.Point(550, 166);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 20);
             this.label5.TabIndex = 37;
@@ -113,15 +112,15 @@
             // 
             this.listBox_szín.FormattingEnabled = true;
             this.listBox_szín.ItemHeight = 20;
-            this.listBox_szín.Location = new System.Drawing.Point(447, 222);
+            this.listBox_szín.Location = new System.Drawing.Point(380, 218);
             this.listBox_szín.Name = "listBox_szín";
-            this.listBox_szín.Size = new System.Drawing.Size(132, 124);
+            this.listBox_szín.Size = new System.Drawing.Size(125, 124);
             this.listBox_szín.TabIndex = 36;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(443, 170);
+            this.label4.Location = new System.Drawing.Point(376, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 20);
             this.label4.TabIndex = 35;
@@ -131,16 +130,16 @@
             // 
             this.listBox_tipus.FormattingEnabled = true;
             this.listBox_tipus.ItemHeight = 20;
-            this.listBox_tipus.Location = new System.Drawing.Point(231, 222);
+            this.listBox_tipus.Location = new System.Drawing.Point(209, 218);
             this.listBox_tipus.Name = "listBox_tipus";
-            this.listBox_tipus.Size = new System.Drawing.Size(132, 124);
+            this.listBox_tipus.Size = new System.Drawing.Size(125, 124);
             this.listBox_tipus.TabIndex = 34;
-  
+            this.listBox_tipus.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox_tipus_MouseClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(227, 170);
+            this.label3.Location = new System.Drawing.Point(205, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 20);
             this.label3.TabIndex = 33;
@@ -149,7 +148,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 170);
+            this.label2.Location = new System.Drawing.Point(36, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 20);
             this.label2.TabIndex = 32;
@@ -159,15 +158,15 @@
             // 
             this.listBox_fazon.FormattingEnabled = true;
             this.listBox_fazon.ItemHeight = 20;
-            this.listBox_fazon.Location = new System.Drawing.Point(34, 222);
+            this.listBox_fazon.Location = new System.Drawing.Point(40, 218);
             this.listBox_fazon.Name = "listBox_fazon";
-            this.listBox_fazon.Size = new System.Drawing.Size(130, 84);
+            this.listBox_fazon.Size = new System.Drawing.Size(123, 84);
             this.listBox_fazon.TabIndex = 31;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 30);
+            this.label1.Location = new System.Drawing.Point(36, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 30;
@@ -175,9 +174,9 @@
             // 
             // textBox_nev
             // 
-            this.textBox_nev.Location = new System.Drawing.Point(25, 68);
+            this.textBox_nev.Location = new System.Drawing.Point(31, 64);
             this.textBox_nev.Name = "textBox_nev";
-            this.textBox_nev.Size = new System.Drawing.Size(196, 26);
+            this.textBox_nev.Size = new System.Drawing.Size(189, 26);
             this.textBox_nev.TabIndex = 29;
             this.textBox_nev.TextChanged += new System.EventHandler(this.textBox_nev_TextChanged);
             this.textBox_nev.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_nev_Validating);
@@ -202,7 +201,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_nev);
             this.Name = "rendeles_ablak";
-            this.Size = new System.Drawing.Size(830, 459);
+            this.Size = new System.Drawing.Size(723, 464);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,10 +12,12 @@ namespace beadando_f9zw0q
 {
     public partial class eddigirendelesek_ablak : UserControl
     {
-        adatbazisEntities context = new adatbazisEntities();
+        
         public eddigirendelesek_ablak()
         {
+
             InitializeComponent();
+
         }
 
         private void eddigirendelesek_ablak_Load(object sender, EventArgs e)
@@ -25,18 +27,24 @@ namespace beadando_f9zw0q
 
         private void Listázás()
         {
-            var rendelések = from x in context.Rendelés
-                             select new
-                             {
-                                 Név = x.Név,
-                                 Ruhadarab_fazon = x.Termék.Fazon.Nem,
-                                 Ruhadarab_tipus = x.Termék.Ruhadarab.Név,
-                                 Ruhadarab_méret = x.Termék.Méret.Név,
-                                 Ruhadarab_szín = x.Termék.Szín.Név,
-                                 Ruhadarab_ár = x.Termék.Ruhadarab.Ár,
-                             };
+            using (var context = new adatbazisEntities())
+            {
+                context.Database.Connection.Open();
 
-            dataGridView_eddigirendeles.DataSource = rendelések.ToList();
+                var rendelések = from x in context.Rendelés
+                                 select new
+                                 {
+                                     Név = x.Név,
+                                     Ruhadarab_fazon = x.Termék.Fazon.Nem,
+                                     Ruhadarab_tipus = x.Termék.Ruhadarab.Név,
+                                     Ruhadarab_méret = x.Termék.Méret.Név,
+                                     Ruhadarab_szín = x.Termék.Szín.Név,
+                                     Ruhadarab_ár = x.Termék.Ruhadarab.Ár,
+                                 };
+
+                dataGridView_eddigirendeles.DataSource = rendelések.ToList();
+            }
+               
         }
     }
 }

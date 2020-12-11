@@ -16,8 +16,9 @@ namespace beadando_f9zw0q
     public partial class adatbazisEntities : DbContext
     {
         public adatbazisEntities()
-            : base("name=adatbazisEntities")
+            : base("name=adatbazisconnectionstring")
         {
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
