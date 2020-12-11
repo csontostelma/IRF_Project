@@ -18,7 +18,6 @@ namespace beadando_f9zw0q
         public adatbazisEntities()
             : base("name=adatbazisconnectionstring")
         {
-
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
