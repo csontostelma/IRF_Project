@@ -42,19 +42,19 @@ namespace beadando_f9zw0q
 
         private void textBox_nev_Validating(object sender, CancelEventArgs e)
         {
-            //string Név = @"^[A-Za-zÁ-ú]+ [A-Za-zÁ-ú]+$";
+            string Név = @"^[A-Za-zÁ-ú]+ [A-Za-zÁ-ú]+$";
 
-            //Regex r = new Regex(Név);
-            //if (r.IsMatch(textBox_nev.Text))
-            //{
-            //    textBox_nev.BackColor = Color.LightGreen;
-            //    e.Cancel = false;
-            //}
-            //else
-            //{
-            //    textBox_nev.BackColor = Color.Red;
-            //    e.Cancel = true;
-            //}
+            Regex r = new Regex(Név);
+            if (r.IsMatch(textBox_nev.Text))
+            {
+                textBox_nev.BackColor = Color.LightGreen;
+                e.Cancel = false;
+            }
+            else
+            {
+                textBox_nev.BackColor = Color.Red;
+                e.Cancel = true;
+            }
         }
 
         private void textBox_nev_TextChanged(object sender, EventArgs e)
