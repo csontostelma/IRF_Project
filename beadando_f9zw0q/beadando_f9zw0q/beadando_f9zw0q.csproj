@@ -76,6 +76,12 @@
       <DependentUpon>adatbazisDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="eddigirendelesek_ablak.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="eddigirendelesek_ablak.Designer.cs">
+      <DependentUpon>eddigirendelesek_ablak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fazon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -105,14 +111,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rendeles_ablak.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="rendeles_ablak.Designer.cs">
+      <DependentUpon>rendeles_ablak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rendelés.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Rendelés_ablak.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rendelés_ablak.Designer.cs">
-      <DependentUpon>Rendelés_ablak.cs</DependentUpon>
     </Compile>
     <Compile Include="Ruhadarab.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -123,6 +129,12 @@
     <Compile Include="Termék.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="eddigirendelesek_ablak.resx">
+      <DependentUpon>eddigirendelesek_ablak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -132,6 +144,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rendeles_ablak.resx">
+      <DependentUpon>rendeles_ablak.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="adatbazisDataSet.xsc">
       <DependentUpon>adatbazisDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
