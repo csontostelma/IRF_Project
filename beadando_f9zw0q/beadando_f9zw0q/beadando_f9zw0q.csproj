@@ -82,6 +82,7 @@
     <Compile Include="eddigirendelesek_ablak.Designer.cs">
       <DependentUpon>eddigirendelesek_ablak.cs</DependentUpon>
     </Compile>
+    <Compile Include="Excelmenedzser.cs" />
     <Compile Include="Fazon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
