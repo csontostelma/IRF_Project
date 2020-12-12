@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace beadando_f9zw0q
+namespace beadando_f9zw0q.Adatbázis
 {
     using System;
     using System.Collections.Generic;

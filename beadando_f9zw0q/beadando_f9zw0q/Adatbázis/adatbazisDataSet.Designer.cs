@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace beadando_f9zw0q {
+namespace beadando_f9zw0q.Adatbázis {
     
     
     /// <summary>

@@ -7,30 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace beadando_f9zw0q
+namespace beadando_f9zw0q.Adatbázis
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Termék
+    public partial class Fazon
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Termék()
+        public Fazon()
         {
-            this.Rendelés = new HashSet<Rendelés>();
+            this.Termék = new HashSet<Termék>();
         }
     
-        public int TermékID { get; set; }
-        public Nullable<int> RuhadarabFK { get; set; }
-        public Nullable<int> MéretFK { get; set; }
-        public Nullable<int> SzínFK { get; set; }
-        public Nullable<int> FazonFK { get; set; }
+        public int FazonID { get; set; }
+        public string Nem { get; set; }
     
-        public virtual Fazon Fazon { get; set; }
-        public virtual Méret Méret { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rendelés> Rendelés { get; set; }
-        public virtual Ruhadarab Ruhadarab { get; set; }
-        public virtual Szín Szín { get; set; }
+        public virtual ICollection<Termék> Termék { get; set; }
     }
 }

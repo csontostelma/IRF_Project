@@ -7,6 +7,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using System.Drawing;
 using System.Windows.Forms;
+using beadando_f9zw0q.Adatbázis;
 
 namespace beadando_f9zw0q
 {

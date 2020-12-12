@@ -37,7 +37,7 @@
             // 
             // button_rendelés
             // 
-            this.button_rendelés.Location = new System.Drawing.Point(38, 134);
+            this.button_rendelés.Location = new System.Drawing.Point(38, 143);
             this.button_rendelés.Name = "button_rendelés";
             this.button_rendelés.Size = new System.Drawing.Size(134, 54);
             this.button_rendelés.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // button_rendeléstörlés
             // 
-            this.button_rendeléstörlés.Location = new System.Drawing.Point(38, 336);
+            this.button_rendeléstörlés.Location = new System.Drawing.Point(38, 320);
             this.button_rendeléstörlés.Name = "button_rendeléstörlés";
             this.button_rendeléstörlés.Size = new System.Drawing.Size(134, 54);
             this.button_rendeléstörlés.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // button_eddigirendeles
             // 
-            this.button_eddigirendeles.Location = new System.Drawing.Point(38, 240);
+            this.button_eddigirendeles.Location = new System.Drawing.Point(38, 231);
             this.button_eddigirendeles.Name = "button_eddigirendeles";
             this.button_eddigirendeles.Size = new System.Drawing.Size(134, 54);
             this.button_eddigirendeles.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             // button_excel
             // 
-            this.button_excel.Location = new System.Drawing.Point(38, 423);
+            this.button_excel.Location = new System.Drawing.Point(38, 406);
             this.button_excel.Name = "button_excel";
             this.button_excel.Size = new System.Drawing.Size(134, 54);
             this.button_excel.TabIndex = 4;
