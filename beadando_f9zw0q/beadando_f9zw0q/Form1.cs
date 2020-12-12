@@ -32,5 +32,27 @@ namespace beadando_f9zw0q
             panel1.Controls.Add(era);
             era.Dock = DockStyle.Fill;
         }
+
+        private void button_rendeléstörlés_Click(object sender, EventArgs e)
+        {
+            using (var context = new adatbazisEntities())
+            {
+                context.Database.Connection.Open();
+
+                List<Rendelés> ideiglenes = new List<Rendelés>();
+
+                List<Rendelés> talatok = context.Rendelés.Where(a => a.Név == segedosztaly.nev && a.Termék.Ruhadarab.Név == segedosztaly.ruha).ToList();
+         
+
+                foreach (var item in talatok)
+                {
+                    var torlendo = context.Rendelés.Remove(item);
+                }
+
+                context.SaveChanges();
+
+
+            }
+        }
     }
 }

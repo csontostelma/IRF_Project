@@ -50,6 +50,7 @@ namespace beadando_f9zw0q
         private void button1_Click(object sender, EventArgs e)
         {
             var kereses = textBox1.Text.ToString();
+            segedosztaly.ruha = kereses;
 
             using (var context = new adatbazisEntities())
             {
@@ -77,6 +78,17 @@ namespace beadando_f9zw0q
 
                 dataGridView_eddigirendeles.DataSource = rendelések.ToList();
             }
+        }
+
+ 
+
+        private void dataGridView_eddigirendeles_SelectionChanged(object sender, EventArgs e)
+        {
+
+            segedosztaly.nev = dataGridView_eddigirendeles.CurrentRow.Cells[0].Value.ToString();
+            segedosztaly.ruha = dataGridView_eddigirendeles.CurrentRow.Cells[2].Value.ToString();
+
+            textBox1.Text = dataGridView_eddigirendeles.CurrentRow.Cells[2].Value.ToString(); 
         }
     }
 }

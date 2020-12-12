@@ -52,6 +52,7 @@
             this.button_rendeléstörlés.TabIndex = 1;
             this.button_rendeléstörlés.Text = "Rendelés törlés";
             this.button_rendeléstörlés.UseVisualStyleBackColor = true;
+            this.button_rendeléstörlés.Click += new System.EventHandler(this.button_rendeléstörlés_Click);
             // 
             // button_eddigirendeles
             // 
