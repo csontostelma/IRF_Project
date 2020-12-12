@@ -13,9 +13,17 @@ namespace beadando_f9zw0q
 {
     public partial class rendeles_ablak : UserControl
     {
-        //adatbazisEntities context = new adatbazisEntities();
 
-       
+        
+
+        public List<Meret> meretlista
+        {
+            get
+            {
+                return Enum.GetValues(typeof(Meret)).Cast<Meret>().ToList();
+            }
+
+        }
 
         public rendeles_ablak()
         {
@@ -29,9 +37,9 @@ namespace beadando_f9zw0q
                 listBox_fazon.DisplayMember = "Nem";
                 listBox_fazon.SelectedItem = null;
 
-                listBox_méret.DataSource = context.Méret.ToList();
-                listBox_méret.DisplayMember = "Név";
-                listBox_méret.SelectedItem = null;
+                comboBox_meret.DataSource = meretlista; 
+                comboBox_meret.DisplayMember = "Ruha_nagysaga";
+                comboBox_meret.SelectedItem = null;
 
                 listBox_szín.DataSource = context.Szín.ToList();
                 listBox_szín.DisplayMember = "Név";
@@ -77,14 +85,14 @@ namespace beadando_f9zw0q
                 
                     var fazon = (Fazon)listBox_fazon.SelectedItem;
                     var ruhadarab = (Ruhadarab)listBox_tipus.SelectedItem;
-                    var méret = (Méret)listBox_méret.SelectedItem;
+                    var méret = (int)comboBox_meret.SelectedItem;
                     var szín = (Szín)listBox_szín.SelectedItem;
 
 
                     Termék t = new Termék();
                     t.FazonFK = fazon.FazonID;
                     t.RuhadarabFK = ruhadarab.RuhadarabID;
-                    t.MéretFK = méret.MéretID;
+                    t.MéretFK = méret;
                     t.SzínFK = szín.SzínID;
 
                 using (var context = new adatbazisEntities())
@@ -100,9 +108,8 @@ namespace beadando_f9zw0q
                         r.RendelésID = context.Rendelés.Max(a => a.RendelésID) + 1;
                         r.Név = textBox_nev.Text;
                         context.Rendelés.Add(r);
-                        context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Rendelés ON");
                         context.SaveChanges();
-                        context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Rendelés OFF");
+ 
                     }
                     catch (Exception ex)
                     {
@@ -129,7 +136,7 @@ namespace beadando_f9zw0q
             textBox_nev.BackColor = default;
             listBox_fazon.SelectedItem = default;
             listBox_tipus.SelectedItem = default;
-            listBox_méret.SelectedItem = default;
+            comboBox_meret.SelectedItem = default;
             listBox_szín.SelectedItem = default;
             textBox_ár.Clear();
             textBox_nev.Enabled = true;

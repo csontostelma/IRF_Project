@@ -32,6 +32,7 @@
             this.button_rendeléstörlés = new System.Windows.Forms.Button();
             this.button_eddigirendeles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_excel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_rendelés
@@ -71,11 +72,22 @@
             this.panel1.Size = new System.Drawing.Size(840, 450);
             this.panel1.TabIndex = 3;
             // 
+            // button_excel
+            // 
+            this.button_excel.Location = new System.Drawing.Point(38, 423);
+            this.button_excel.Name = "button_excel";
+            this.button_excel.Size = new System.Drawing.Size(134, 54);
+            this.button_excel.TabIndex = 4;
+            this.button_excel.Text = "Excel generálás";
+            this.button_excel.UseVisualStyleBackColor = true;
+            this.button_excel.Click += new System.EventHandler(this.button_excel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 545);
+            this.Controls.Add(this.button_excel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button_eddigirendeles);
             this.Controls.Add(this.button_rendeléstörlés);
@@ -92,6 +104,7 @@
         private System.Windows.Forms.Button button_rendeléstörlés;
         private System.Windows.Forms.Button button_eddigirendeles;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button_excel;
     }
 }
 

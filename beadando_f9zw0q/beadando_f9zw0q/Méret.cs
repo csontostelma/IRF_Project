@@ -21,7 +21,7 @@ namespace beadando_f9zw0q
         }
     
         public int MéretID { get; set; }
-        public string Név { get; set; }
+        public Nullable<int> Ruha_nagysaga { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Termék> Termék { get; set; }

@@ -37,7 +37,7 @@ namespace beadando_f9zw0q
                                      Név = x.Név,
                                      Ruhadarab_fazon = x.Termék.Fazon.Nem,
                                      Ruhadarab_tipus = x.Termék.Ruhadarab.Név,
-                                     Ruhadarab_méret = x.Termék.Méret.Név,
+                                     Ruhadarab_méret = (Meret)x.Termék.Méret.Ruha_nagysaga,
                                      Ruhadarab_szín = x.Termék.Szín.Név,
                                      Ruhadarab_ár = x.Termék.Ruhadarab.Ár,
                                  };
@@ -71,7 +71,7 @@ namespace beadando_f9zw0q
                                      Név = x.Név,
                                      Ruhadarab_fazon = x.Termék.Fazon.Nem,
                                      Ruhadarab_tipus = x.Termék.Ruhadarab.Név,
-                                     Ruhadarab_méret = x.Termék.Méret.Név,
+                                     Ruhadarab_méret = (Meret)x.Termék.Méret.Ruha_nagysaga,
                                      Ruhadarab_szín = x.Termék.Szín.Név,
                                      Ruhadarab_ár = x.Termék.Ruhadarab.Ár,
                                  };

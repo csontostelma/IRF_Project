@@ -17,13 +17,13 @@
             <PropertyRef Name="MéretID" />
           </Key>
           <Property Name="MéretID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Név" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ruha_nagysaga" Type="int" />
         </EntityType>
         <EntityType Name="Rendelés">
           <Key>
             <PropertyRef Name="RendelésID" />
           </Key>
-          <Property Name="RendelésID" Type="int" Nullable="false" />
+          <Property Name="RendelésID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TermékFK" Type="int" />
           <Property Name="Név" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -158,14 +158,14 @@
             <PropertyRef Name="MéretID" />
           </Key>
           <Property Name="MéretID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Név" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ruha_nagysaga" Type="Int32" />
           <NavigationProperty Name="Termék" Relationship="Self.FK_Termék_ToTable_2" FromRole="Méret" ToRole="Termék" />
         </EntityType>
         <EntityType Name="Rendelés">
           <Key>
             <PropertyRef Name="RendelésID" />
           </Key>
-          <Property Name="RendelésID" Type="Int32" Nullable="false" />
+          <Property Name="RendelésID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TermékFK" Type="Int32" />
           <Property Name="Név" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Termék" Relationship="Self.FK_Rendelés_ToTable" FromRole="Rendelés" ToRole="Termék" />
@@ -262,7 +262,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="adatbazisEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Fazon" EntityType="Self.Fazon" />
           <EntitySet Name="Méret" EntityType="Self.Méret" />
           <EntitySet Name="Rendelés" EntityType="Self.Rendelés" />
@@ -295,7 +295,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="adatbazisModelStoreContainer" CdmEntityContainer="adatbazisEntities">
+        <EntityContainerMapping StorageEntityContainer="adatbazisModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Fazon">
             <EntityTypeMapping TypeName="adatbazisModel.Fazon">
               <MappingFragment StoreEntitySet="Fazon">
@@ -308,7 +308,7 @@
             <EntityTypeMapping TypeName="adatbazisModel.Méret">
               <MappingFragment StoreEntitySet="Méret">
                 <ScalarProperty Name="MéretID" ColumnName="MéretID" />
-                <ScalarProperty Name="Név" ColumnName="Név" />
+                <ScalarProperty Name="Ruha_nagysaga" ColumnName="Ruha_nagysaga" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

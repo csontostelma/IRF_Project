@@ -33,7 +33,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_ár = new System.Windows.Forms.TextBox();
-            this.listBox_méret = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listBox_szín = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.listBox_fazon = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_nev = new System.Windows.Forms.TextBox();
+            this.comboBox_meret = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button_vissza
@@ -89,15 +89,6 @@
             this.textBox_ár.Name = "textBox_ár";
             this.textBox_ár.Size = new System.Drawing.Size(138, 26);
             this.textBox_ár.TabIndex = 39;
-            // 
-            // listBox_méret
-            // 
-            this.listBox_méret.FormattingEnabled = true;
-            this.listBox_méret.ItemHeight = 20;
-            this.listBox_méret.Location = new System.Drawing.Point(554, 218);
-            this.listBox_méret.Name = "listBox_méret";
-            this.listBox_méret.Size = new System.Drawing.Size(125, 124);
-            this.listBox_méret.TabIndex = 38;
             // 
             // label5
             // 
@@ -181,16 +172,24 @@
             this.textBox_nev.TextChanged += new System.EventHandler(this.textBox_nev_TextChanged);
             this.textBox_nev.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_nev_Validating);
             // 
+            // comboBox_meret
+            // 
+            this.comboBox_meret.FormattingEnabled = true;
+            this.comboBox_meret.Location = new System.Drawing.Point(554, 218);
+            this.comboBox_meret.Name = "comboBox_meret";
+            this.comboBox_meret.Size = new System.Drawing.Size(143, 28);
+            this.comboBox_meret.TabIndex = 44;
+            // 
             // rendeles_ablak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox_meret);
             this.Controls.Add(this.button_vissza);
             this.Controls.Add(this.button_megrendel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_ár);
-            this.Controls.Add(this.listBox_méret);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listBox_szín);
             this.Controls.Add(this.label4);
@@ -214,7 +213,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_ár;
-        private System.Windows.Forms.ListBox listBox_méret;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox_szín;
         private System.Windows.Forms.Label label4;
@@ -224,5 +222,6 @@
         private System.Windows.Forms.ListBox listBox_fazon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_nev;
+        private System.Windows.Forms.ComboBox comboBox_meret;
     }
 }
