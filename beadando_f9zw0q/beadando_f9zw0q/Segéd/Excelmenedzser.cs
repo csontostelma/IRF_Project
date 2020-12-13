@@ -104,7 +104,6 @@ namespace beadando_f9zw0q
         {
             int lastRowID = xlSheet.UsedRange.Rows.Count;
             int lastColumn = xlSheet.UsedRange.Columns.Count;
-            //int secondColumn = xlSheet.UsedRange.Columns.Count;
 
             Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, lastColumn));
             headerRange.Font.Bold = true;
@@ -113,7 +112,7 @@ namespace beadando_f9zw0q
             headerRange.EntireColumn.AutoFit();
             headerRange.RowHeight = 30;
             headerRange.Interior.Color = Color.LightCoral;
-            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThin);
 
             Excel.Range tableRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, lastColumn));
             tableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
@@ -122,10 +121,28 @@ namespace beadando_f9zw0q
             //firstColumn.Interior.Color = Color.LightGoldenrodYellow;
 
             Excel.Range LastColumn = xlSheet.get_Range(GetCell(2, lastColumn), GetCell(lastRowID, lastColumn));
-            //LastColumn.Interior.Color = Color.LightSeaGreen;
+            LastColumn.Interior.Color = Color.LightSteelBlue;
+            LastColumn.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            LastColumn.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
 
-            Excel.Range thirdColumn=xlSheet.get_Range(GetCell(2, 3), GetCell(lastRowID, 3));
+            Excel.Range thirdColumn= xlSheet.get_Range(GetCell(2, 3), GetCell(lastRowID, 3));
             thirdColumn.Font.Italic = true;
+            thirdColumn.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            thirdColumn.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+
+            Excel.Range secondColumn= xlSheet.get_Range(GetCell(2, 2), GetCell(lastRowID, 2));
+            secondColumn.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            secondColumn.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+
+            Excel.Range fourthColumn= xlSheet.get_Range(GetCell(2, 4), GetCell(lastRowID, 4));
+            fourthColumn.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            fourthColumn.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+
+            Excel.Range fifthColumn=xlSheet.get_Range(GetCell(2, 5), GetCell(lastRowID, 5));
+            fifthColumn.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            fifthColumn.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+
+
         }
 
         private string GetCell(int x, int y)

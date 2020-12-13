@@ -99,8 +99,6 @@ namespace beadando_f9zw0q
           
         }
 
- 
-
         private void dataGridView_eddigirendeles_SelectionChanged(object sender, EventArgs e)
         {
 
