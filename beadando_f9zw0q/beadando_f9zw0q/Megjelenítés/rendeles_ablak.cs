@@ -14,15 +14,12 @@ namespace beadando_f9zw0q
 {
     public partial class rendeles_ablak : UserControl
     {
-
-
         public List<Meret> meretlista
         {
             get
             {
                 return Enum.GetValues(typeof(Meret)).Cast<Meret>().ToList();
             }
-
         }
 
         public rendeles_ablak()
@@ -31,7 +28,13 @@ namespace beadando_f9zw0q
 
             Adatok_beolvasasa();
 
-       
+            Mintaseged();
+        }
+
+        private void Mintaseged()
+        {
+            label_minta.Text = "\uEC87";
+            label_minta3.Text = "\uE74E";
         }
 
         private void Adatok_beolvasasa()
@@ -90,15 +93,12 @@ namespace beadando_f9zw0q
             {
                 MessageBox.Show("Hiba történt: " + ex.Message);
             }
-
-         
         }
 
         private void textBox_nev_TextChanged(object sender, EventArgs e)
         {
             this.Validate();
         }
-
 
         private void button_megrendel_Click(object sender, EventArgs e)
         {
@@ -112,7 +112,6 @@ namespace beadando_f9zw0q
                     var méret = (int)comboBox_meret.SelectedItem;
                     var szín = (Szín)listBox_szín.SelectedItem;
 
-
                     Termék t = new Termék();
                     t.FazonFK = fazon.FazonID;
                     t.RuhadarabFK = ruhadarab.RuhadarabID;
@@ -122,8 +121,6 @@ namespace beadando_f9zw0q
                     using (var context = new adatbazisEntities())
                     {
                         context.Database.Connection.Open();
-
-
                         
                             context.Termék.Add(t);
                             Rendelés r = new Rendelés();
@@ -132,20 +129,26 @@ namespace beadando_f9zw0q
                             r.Név = textBox_nev.Text;
                             context.Rendelés.Add(r);
                             context.SaveChanges();
-                        
-
                     }
 
+                    MessageBox.Show("Rendelését rögzítettük!");
                 }
+                else
+                {
+                    textBox_nev.Text = textBox_nev.Text;
+                    listBox_fazon.SelectedItem = true;
+                    listBox_tipus.SelectedItem = true;
+                    listBox_szín.SelectedItem = true;
+                    comboBox_meret.SelectedItem = true;
+
+
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Hiba történt: " + ex.Message);
             }
-
-           
-                    
-
                 
         }
 
@@ -160,31 +163,6 @@ namespace beadando_f9zw0q
             {
                 MessageBox.Show("Hiba történt: " + ex.Message);
             }
-
-         
-        }
-
-        private void button_megrendel_MouseClick(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                textBox_nev.Clear();
-                textBox_nev.BackColor = default;
-                listBox_fazon.SelectedItem = default;
-                listBox_tipus.SelectedItem = default;
-                comboBox_meret.SelectedItem = default;
-                listBox_szín.SelectedItem = default;
-                textBox_ár.Clear();
-                textBox_nev.Enabled = true;
-
-                MessageBox.Show("Rendelését rögzítettük!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hiba történt: " + ex.Message);
-            }
-
-           
-        }
+        }     
     }
 }

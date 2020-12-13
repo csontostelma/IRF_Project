@@ -43,9 +43,8 @@
             this.dataGridView_eddigirendeles.RowHeadersWidth = 62;
             this.dataGridView_eddigirendeles.RowTemplate.Height = 28;
             this.dataGridView_eddigirendeles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_eddigirendeles.Size = new System.Drawing.Size(630, 272);
+            this.dataGridView_eddigirendeles.Size = new System.Drawing.Size(748, 351);
             this.dataGridView_eddigirendeles.TabIndex = 0;
-
             this.dataGridView_eddigirendeles.SelectionChanged += new System.EventHandler(this.dataGridView_eddigirendeles_SelectionChanged);
             // 
             // textBox1
@@ -83,7 +82,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView_eddigirendeles);
             this.Name = "eddigirendelesek_ablak";
-            this.Size = new System.Drawing.Size(684, 376);
+            this.Size = new System.Drawing.Size(802, 449);
             this.Load += new System.EventHandler(this.eddigirendelesek_ablak_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_eddigirendeles)).EndInit();
             this.ResumeLayout(false);

@@ -14,18 +14,18 @@ namespace beadando_f9zw0q
 {
     public partial class Form1 : Form
     {
-        
-
-
-
         public Form1()
         {
             InitializeComponent();
-          
- 
+
+            Mintaseged();
         }
 
-       
+        private void Mintaseged()
+        {
+            label_minta1.Text = "\uE719";
+            button_rendeléstörlés.Text = "\uE74D";
+        }
 
         private void button_rendelés_Click(object sender, EventArgs e)
         {
@@ -42,12 +42,10 @@ namespace beadando_f9zw0q
                 MessageBox.Show("Hiba történt: " + ex.Message);
             }
 
-    
         }
 
         private void button_eddigirendeles_Click(object sender, EventArgs e)
         {
-
             try
             {
                 eddigirendelesek_ablak era = new eddigirendelesek_ablak();
@@ -82,11 +80,9 @@ namespace beadando_f9zw0q
                     }
 
                     context.SaveChanges();
-
-
                 }
 
-                MessageBox.Show("A rendelést töröltül, töltse újra a rendeléseket!");
+                MessageBox.Show("A rendelést töröltük, töltse újra a rendeléseket!");
             }
             catch (Exception ex)
             {
@@ -105,8 +101,7 @@ namespace beadando_f9zw0q
             {
                 MessageBox.Show("Hiba történt: " + ex.Message);
             }
-            
-            
         }
+
     }
 }
