@@ -104,25 +104,28 @@ namespace beadando_f9zw0q
         {
             int lastRowID = xlSheet.UsedRange.Rows.Count;
             int lastColumn = xlSheet.UsedRange.Columns.Count;
+            //int secondColumn = xlSheet.UsedRange.Columns.Count;
 
             Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, lastColumn));
             headerRange.Font.Bold = true;
             headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             headerRange.EntireColumn.AutoFit();
-            headerRange.RowHeight = 40;
-            headerRange.Interior.Color = Color.LightBlue;
+            headerRange.RowHeight = 30;
+            headerRange.Interior.Color = Color.LightCoral;
             headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
 
             Excel.Range tableRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, lastColumn));
             tableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
 
             Excel.Range firstColumn = xlSheet.get_Range(GetCell(2, 1), GetCell(lastRowID, 1));
-            firstColumn.Font.Bold = true;
-            firstColumn.Interior.Color = Color.LightYellow;
+            //firstColumn.Interior.Color = Color.LightGoldenrodYellow;
 
             Excel.Range LastColumn = xlSheet.get_Range(GetCell(2, lastColumn), GetCell(lastRowID, lastColumn));
-            LastColumn.Interior.Color = Color.LightGreen;
+            //LastColumn.Interior.Color = Color.LightSeaGreen;
+
+            Excel.Range thirdColumn=xlSheet.get_Range(GetCell(2, 3), GetCell(lastRowID, 3));
+            thirdColumn.Font.Italic = true;
         }
 
         private string GetCell(int x, int y)
