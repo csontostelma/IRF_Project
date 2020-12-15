@@ -141,7 +141,6 @@ namespace beadando_f9zw0q
                     listBox_szín.SelectedItem = true;
                     comboBox_meret.SelectedItem = true;
 
-
                 }
 
             }

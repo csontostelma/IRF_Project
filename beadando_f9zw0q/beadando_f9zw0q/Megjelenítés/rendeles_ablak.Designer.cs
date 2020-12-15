@@ -48,7 +48,7 @@
             // 
             // button_megrendel
             // 
-            this.button_megrendel.Location = new System.Drawing.Point(513, 379);
+            this.button_megrendel.Location = new System.Drawing.Point(594, 379);
             this.button_megrendel.Name = "button_megrendel";
             this.button_megrendel.Size = new System.Drawing.Size(148, 52);
             this.button_megrendel.TabIndex = 42;
@@ -56,7 +56,6 @@
             this.button_megrendel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_megrendel.UseVisualStyleBackColor = true;
             this.button_megrendel.Click += new System.EventHandler(this.button_megrendel_Click);
-
             // 
             // label7
             // 
@@ -87,7 +86,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(541, 154);
+            this.label5.Location = new System.Drawing.Point(595, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 20);
             this.label5.TabIndex = 37;
@@ -97,15 +96,15 @@
             // 
             this.listBox_szín.FormattingEnabled = true;
             this.listBox_szín.ItemHeight = 20;
-            this.listBox_szín.Location = new System.Drawing.Point(380, 189);
+            this.listBox_szín.Location = new System.Drawing.Point(421, 189);
             this.listBox_szín.Name = "listBox_szín";
-            this.listBox_szín.Size = new System.Drawing.Size(125, 124);
+            this.listBox_szín.Size = new System.Drawing.Size(138, 124);
             this.listBox_szín.TabIndex = 36;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(376, 154);
+            this.label4.Location = new System.Drawing.Point(417, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 20);
             this.label4.TabIndex = 35;
@@ -117,7 +116,7 @@
             this.listBox_tipus.ItemHeight = 20;
             this.listBox_tipus.Location = new System.Drawing.Point(209, 189);
             this.listBox_tipus.Name = "listBox_tipus";
-            this.listBox_tipus.Size = new System.Drawing.Size(125, 124);
+            this.listBox_tipus.Size = new System.Drawing.Size(167, 124);
             this.listBox_tipus.TabIndex = 34;
             this.listBox_tipus.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox_tipus_MouseClick);
             // 
@@ -146,7 +145,7 @@
             this.listBox_fazon.ItemHeight = 20;
             this.listBox_fazon.Location = new System.Drawing.Point(40, 189);
             this.listBox_fazon.Name = "listBox_fazon";
-            this.listBox_fazon.Size = new System.Drawing.Size(123, 84);
+            this.listBox_fazon.Size = new System.Drawing.Size(129, 84);
             this.listBox_fazon.TabIndex = 31;
             // 
             // label1
@@ -170,7 +169,7 @@
             // comboBox_meret
             // 
             this.comboBox_meret.FormattingEnabled = true;
-            this.comboBox_meret.Location = new System.Drawing.Point(545, 189);
+            this.comboBox_meret.Location = new System.Drawing.Point(599, 189);
             this.comboBox_meret.Name = "comboBox_meret";
             this.comboBox_meret.Size = new System.Drawing.Size(143, 28);
             this.comboBox_meret.TabIndex = 44;
@@ -190,7 +189,7 @@
             this.label_minta3.AutoSize = true;
             this.label_minta3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label_minta3.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_minta3.Location = new System.Drawing.Point(611, 393);
+            this.label_minta3.Location = new System.Drawing.Point(692, 393);
             this.label_minta3.Name = "label_minta3";
             this.label_minta3.Size = new System.Drawing.Size(50, 22);
             this.label_minta3.TabIndex = 47;
@@ -218,7 +217,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_nev);
             this.Name = "rendeles_ablak";
-            this.Size = new System.Drawing.Size(708, 452);
+            this.Size = new System.Drawing.Size(793, 452);
             this.ResumeLayout(false);
             this.PerformLayout();
 

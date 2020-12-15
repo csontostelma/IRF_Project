@@ -82,6 +82,18 @@
     <Compile Include="Megjelenítés\eddigirendelesek_ablak.Designer.cs">
       <DependentUpon>eddigirendelesek_ablak.cs</DependentUpon>
     </Compile>
+    <Compile Include="Megjelenítés\Paraméterekozzáadása.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Megjelenítés\Paraméterekozzáadása.Designer.cs">
+      <DependentUpon>Paraméterekozzáadása.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Megjelenítés\Paraméterektörlése.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Megjelenítés\Paraméterektörlése.Designer.cs">
+      <DependentUpon>Paraméterektörlése.cs</DependentUpon>
+    </Compile>
     <Compile Include="Segéd\Excelmenedzser.cs" />
     <Compile Include="Adatbázis\Fazon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -131,11 +143,24 @@
     <Compile Include="Adatbázis\Termék.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Megjelenítés\Paraméterekmódosítása.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Megjelenítés\Paraméterekmódosítása.Designer.cs">
+      <DependentUpon>Paraméterekmódosítása.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Termek_adat.cs" />
     <EmbeddedResource Include="Megjelenítés\eddigirendelesek_ablak.resx">
       <DependentUpon>eddigirendelesek_ablak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Megjelenítés\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Megjelenítés\Paraméterekozzáadása.resx">
+      <DependentUpon>Paraméterekozzáadása.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Megjelenítés\Paraméterektörlése.resx">
+      <DependentUpon>Paraméterektörlése.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,6 +173,9 @@
     </Compile>
     <EmbeddedResource Include="Megjelenítés\rendeles_ablak.resx">
       <DependentUpon>rendeles_ablak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Megjelenítés\Paraméterekmódosítása.resx">
+      <DependentUpon>Paraméterekmódosítása.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Adatbázis\adatbazisDataSet.xsc">
       <DependentUpon>adatbazisDataSet.xsd</DependentUpon>

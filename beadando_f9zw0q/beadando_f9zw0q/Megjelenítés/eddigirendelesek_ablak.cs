@@ -69,6 +69,13 @@ namespace beadando_f9zw0q
                     context.Database.Connection.Open();
 
                     var ruhadarab = context.Ruhadarab.FirstOrDefault(a => a.Név == kereses);
+
+                    if (ruhadarab==null)
+                    {
+                        MessageBox.Show("Ilyen ruhadarab nem létezik! : " + textBox1.Text.ToString());
+                        return;
+                    }
+
                     var list = context.Termék.Select(a => a.RuhadarabFK == ruhadarab.RuhadarabID).ToList();
 
 

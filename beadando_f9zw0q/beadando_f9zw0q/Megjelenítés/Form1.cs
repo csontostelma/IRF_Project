@@ -103,5 +103,10 @@ namespace beadando_f9zw0q
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Paraméterekmódosítása úp = new Paraméterekmódosítása();
+            úp.ShowDialog();
+        }
     }
 }
