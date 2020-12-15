@@ -82,7 +82,7 @@ namespace beadando_f9zw0q
                     context.SaveChanges();
                 }
 
-                MessageBox.Show("A rendelést töröltük, töltse újra a rendeléseket!");
+                MessageBox.Show("A rendelést töröltük, töltse újra az eddigi rendeléseket!");
             }
             catch (Exception ex)
             {

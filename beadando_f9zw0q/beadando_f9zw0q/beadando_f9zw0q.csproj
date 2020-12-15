@@ -70,12 +70,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adatbázis\adatbazisDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>adatbazisDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Megjelenítés\eddigirendelesek_ablak.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,20 +171,6 @@
     <EmbeddedResource Include="Megjelenítés\Paraméterekmódosítása.resx">
       <DependentUpon>Paraméterekmódosítása.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Adatbázis\adatbazisDataSet.xsc">
-      <DependentUpon>adatbazisDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Adatbázis\adatbazisDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>adatbazisDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Adatbázis\adatbazisDataSet.xss">
-      <DependentUpon>adatbazisDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <EntityDeploy Include="Adatbázis\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -228,13 +208,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Adatbázis\adatbazis.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Adatbázis\adatbazis_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>adatbazis.mdf</DependentUpon>
-    </Content>
     <Content Include="Adatbázis\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

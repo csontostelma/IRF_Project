@@ -57,10 +57,9 @@ namespace beadando_f9zw0q
                     textBox_fazon.Clear();
                     context.Fazon.Add(f);
 
+                    context.SaveChanges();
 
                     Új_paraméter();
-
-                    context.SaveChanges();
                 }
 
             }
@@ -87,9 +86,9 @@ namespace beadando_f9zw0q
                     textBox_ár.Clear();
                     context.Ruhadarab.Add(r);
 
-                    Új_paraméter();
-
                     context.SaveChanges();
+
+                    Új_paraméter();
                 }
             }
             catch (Exception ex)
@@ -112,10 +111,10 @@ namespace beadando_f9zw0q
                     textBox_szin.Clear();
                     context.Szín.Add(sz);
 
-                    Új_paraméter();
-
                     context.SaveChanges();
-                }
+
+                    Új_paraméter();
+                } 
             }
             catch (Exception ex)
             {
