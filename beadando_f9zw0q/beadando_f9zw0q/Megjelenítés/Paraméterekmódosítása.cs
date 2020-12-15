@@ -19,21 +19,38 @@ namespace beadando_f9zw0q
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_hozzaadas_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Paraméterekozzáadása ph = new Paraméterekozzáadása();
+                panel1.Controls.Clear();
+                panel1.Controls.Add(ph);
+                ph.Dock = DockStyle.Fill;
+            }
+            catch (Exception ex)
+            {
 
-            Paraméterekozzáadása ph = new Paraméterekozzáadása();
-            panel1.Controls.Clear();
-            panel1.Controls.Add(ph);
-            ph.Dock = DockStyle.Fill;
+                MessageBox.Show("Hiba történt a paraméterek hozzáadása funkció betöltésében: " + ex.Message);
+            }
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_torles_Click(object sender, EventArgs e)
         {
-            Paraméterektörlése pt = new Paraméterektörlése();
-            panel1.Controls.Clear();
-            panel1.Controls.Add(pt);
-            pt.Dock = DockStyle.Fill;
+            try
+            {
+                Paraméterektörlése pt = new Paraméterektörlése();
+                panel1.Controls.Clear();
+                panel1.Controls.Add(pt);
+                pt.Dock = DockStyle.Fill;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hiba történt a paraméterek törlése funkció betöltésében: " + ex.Message);
+            }
+            
         }
 
     }

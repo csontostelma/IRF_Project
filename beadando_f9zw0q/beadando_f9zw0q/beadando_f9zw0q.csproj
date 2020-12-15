@@ -149,7 +149,7 @@
     <Compile Include="Megjelenítés\Paraméterekmódosítása.Designer.cs">
       <DependentUpon>Paraméterekmódosítása.cs</DependentUpon>
     </Compile>
-    <Compile Include="Termek_adat.cs" />
+    <Compile Include="Segéd\Termek_adat.cs" />
     <EmbeddedResource Include="Megjelenítés\eddigirendelesek_ablak.resx">
       <DependentUpon>eddigirendelesek_ablak.cs</DependentUpon>
     </EmbeddedResource>

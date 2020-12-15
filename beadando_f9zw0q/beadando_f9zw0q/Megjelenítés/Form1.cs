@@ -39,7 +39,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt a rendelés funkció betöltése közben: " + ex.Message);
             }
 
         }
@@ -55,7 +55,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt az eddigi rendelésekek funkció betöltése közben: " + ex.Message);
             }
           
         }
@@ -86,7 +86,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt a rendelés törlése közben: " + ex.Message);
             }
         
         }
@@ -99,14 +99,23 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt a excel generálása közben: " + ex.Message);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_modositas_Click(object sender, EventArgs e)
         {
-            Paraméterekmódosítása úp = new Paraméterekmódosítása();
-            úp.ShowDialog();
+            try
+            {
+                Paraméterekmódosítása úp = new Paraméterekmódosítása();
+                úp.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hiba történt a paraméterek módosítása ablak betöltése közben: " + ex.Message);
+            }
+            
         }
     }
 }

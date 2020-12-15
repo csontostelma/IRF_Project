@@ -41,7 +41,6 @@ namespace beadando_f9zw0q
         {
             try
             {
-
                 using (var context = new adatbazisEntities())
                 {
                     context.Database.Connection.Open();
@@ -67,7 +66,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt az adatok beolvasása közben: " + ex.Message);
             }
         }
 
@@ -91,7 +90,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt a név validálása során: " + ex.Message);
             }
         }
 
@@ -146,7 +145,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt a rendelés mentése közben: " + ex.Message);
             }
                 
         }
@@ -160,7 +159,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt az ár megjelenítése közben: " + ex.Message);
             }
         }     
     }

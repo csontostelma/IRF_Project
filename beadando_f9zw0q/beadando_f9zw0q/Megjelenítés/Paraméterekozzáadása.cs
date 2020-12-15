@@ -22,91 +22,106 @@ namespace beadando_f9zw0q
 
         private void Új_paraméter()
         {
-            using (var context = new adatbazisEntities())
+            try
             {
-                context.Database.Connection.Open();
+                using (var context = new adatbazisEntities())
+                {
+                    context.Database.Connection.Open();
 
-                comboBox_fazon.DataSource = context.Fazon.ToList();
-                comboBox_fazon.DisplayMember = "Nem";
-                comboBox_ruhadarab.DataSource = context.Ruhadarab.ToList();
-                comboBox_ruhadarab.DisplayMember = "Név";
-                comboBox_szin.DataSource = context.Szín.ToList();
-                comboBox_szin.DisplayMember = "Név";
+                    comboBox_fazon.DataSource = context.Fazon.ToList();
+                    comboBox_fazon.DisplayMember = "Nem";
+                    comboBox_ruhadarab.DataSource = context.Ruhadarab.ToList();
+                    comboBox_ruhadarab.DisplayMember = "Név";
+                    comboBox_szin.DataSource = context.Szín.ToList();
+                    comboBox_szin.DisplayMember = "Név";
+                }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hiba történt a paraméterek betöltése közben: " + ex.Message);
+            }
+
         }
 
         private void button_ujfazon_Click(object sender, EventArgs e)
         {
-            using (var context = new adatbazisEntities())
+            try
             {
-                context.Database.Connection.Open();
-
-                Fazon f = new Fazon();
-                f.Nem = textBox_fazon.Text;
-                textBox_fazon.Clear();
-                context.Fazon.Add(f);
-                try
+                using (var context = new adatbazisEntities())
                 {
+                    context.Database.Connection.Open();
+
+                    Fazon f = new Fazon();
+                    f.Nem = textBox_fazon.Text;
+                    textBox_fazon.Clear();
+                    context.Fazon.Add(f);
+
+
+                    Új_paraméter();
+
                     context.SaveChanges();
                 }
-                catch (Exception ex)
-                {
 
-                    MessageBox.Show(ex.Message);
-                }
-
-                Új_paraméter();
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hiba történt az új fazon paraméter felvétele közben: " + ex.Message);
+            }
+
         }
 
         private void button_ujruhadarab_Click(object sender, EventArgs e)
         {
-            using (var context = new adatbazisEntities())
+            try
             {
-                context.Database.Connection.Open();
-
-                Ruhadarab r = new Ruhadarab();
-                r.Név = textBox_ruhadarab.Text;
-                r.Ár = Convert.ToInt32(textBox_ár.Text);
-                textBox_ruhadarab.Clear();
-                textBox_ár.Clear();
-                context.Ruhadarab.Add(r);
-                try
+                using (var context = new adatbazisEntities())
                 {
+                    context.Database.Connection.Open();
+
+                    Ruhadarab r = new Ruhadarab();
+                    r.Név = textBox_ruhadarab.Text;
+                    r.Ár = Convert.ToInt32(textBox_ár.Text);
+                    textBox_ruhadarab.Clear();
+                    textBox_ár.Clear();
+                    context.Ruhadarab.Add(r);
+
+                    Új_paraméter();
+
                     context.SaveChanges();
                 }
-                catch (Exception ex)
-                {
+            }
+            catch (Exception ex)
+            {
 
-                    MessageBox.Show(ex.Message);
-                }
-
-                Új_paraméter();
+                MessageBox.Show("Hiba történt az új ruhadarab paraméter felvétele közben: " + ex.Message);
             }
         }
-
+    
         private void button_ujszin_Click(object sender, EventArgs e)
         {
-            using (var context = new adatbazisEntities())
+            try
             {
-                context.Database.Connection.Open();
-
-                Szín sz = new Szín();
-                sz.Név = textBox_szin.Text;
-                textBox_szin.Clear();
-                context.Szín.Add(sz);
-                try
+                using (var context = new adatbazisEntities())
                 {
+                    context.Database.Connection.Open();
+
+                    Szín sz = new Szín();
+                    sz.Név = textBox_szin.Text;
+                    textBox_szin.Clear();
+                    context.Szín.Add(sz);
+
+                    Új_paraméter();
+
                     context.SaveChanges();
                 }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-
-                Új_paraméter();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba történt az új szín paraméter felvétele közben: " + ex.Message);
+            }
+           
         }
     }
 }

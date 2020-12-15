@@ -40,7 +40,6 @@ namespace beadando_f9zw0q
         {
             try
             {
-
                 using (var context = new adatbazisEntities())
                 {
                     context.Database.Connection.Open();
@@ -82,7 +81,6 @@ namespace beadando_f9zw0q
 
         private void button_torles_Click(object sender, EventArgs e)
         {
-
             try
             {
                 using (var context = new adatbazisEntities())
@@ -95,12 +93,9 @@ namespace beadando_f9zw0q
 
                     var termek = context.Termék.Where(a => a.Fazon.Nem == f || a.Szín.Név==s || a.Ruhadarab.Név==r).ToList();
 
-                    
-
                     if (termek.Count>0)
                     {
                         MessageBox.Show("Van ilyen paraméterekkel rendelkező termék, emiatt nem lehet törölni!");
-               
                     }
                     else
                     {
@@ -135,9 +130,8 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt a törlés közben: " + ex.Message);
+                MessageBox.Show("Hiba történt a paraméter törlése közben: " + ex.Message);
             }
-
         }
     }
 }

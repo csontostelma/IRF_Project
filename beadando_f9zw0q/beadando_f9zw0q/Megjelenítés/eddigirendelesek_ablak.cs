@@ -50,13 +50,13 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt a listázás során: " + ex.Message);
             }
    
                
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_kereses_Click(object sender, EventArgs e)
         {
 
             try
@@ -101,7 +101,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt a keresés közben: " + ex.Message);
             }
           
         }
@@ -118,7 +118,7 @@ namespace beadando_f9zw0q
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hiba történt: " + ex.Message);
+                MessageBox.Show("Hiba történt a rendelés kiválasztásában: " + ex.Message);
             }
             
         }

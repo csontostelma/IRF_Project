@@ -30,7 +30,7 @@
         {
             this.dataGridView_eddigirendeles = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_kereses = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_eddigirendeles)).BeginInit();
             this.SuspendLayout();
@@ -54,15 +54,15 @@
             this.textBox1.Size = new System.Drawing.Size(155, 26);
             this.textBox1.TabIndex = 1;
             // 
-            // button1
+            // button_kereses
             // 
-            this.button1.Location = new System.Drawing.Point(199, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "keresés";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_kereses.Location = new System.Drawing.Point(199, 36);
+            this.button_kereses.Name = "button_kereses";
+            this.button_kereses.Size = new System.Drawing.Size(96, 36);
+            this.button_kereses.TabIndex = 2;
+            this.button_kereses.Text = "keresés";
+            this.button_kereses.UseVisualStyleBackColor = true;
+            this.button_kereses.Click += new System.EventHandler(this.button_kereses_Click);
             // 
             // label1
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_kereses);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView_eddigirendeles);
             this.Name = "eddigirendelesek_ablak";
@@ -94,7 +94,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView_eddigirendeles;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_kereses;
         private System.Windows.Forms.Label label1;
     }
 }

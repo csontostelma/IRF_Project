@@ -118,7 +118,6 @@ namespace beadando_f9zw0q
             tableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
 
             Excel.Range firstColumn = xlSheet.get_Range(GetCell(2, 1), GetCell(lastRowID, 1));
-            //firstColumn.Interior.Color = Color.LightGoldenrodYellow;
 
             Excel.Range LastColumn = xlSheet.get_Range(GetCell(2, lastColumn), GetCell(lastRowID, lastColumn));
             LastColumn.Interior.Color = Color.LightSteelBlue;
