@@ -52,13 +52,10 @@ namespace beadando_f9zw0q
             {
                 MessageBox.Show("Hiba történt a listázás során: " + ex.Message);
             }
-   
-               
         }
 
         private void button_kereses_Click(object sender, EventArgs e)
         {
-
             try
             {
                 var kereses = textBox1.Text.ToString();
@@ -76,7 +73,7 @@ namespace beadando_f9zw0q
                         return;
                     }
 
-                    var list = context.Termék.Select(a => a.RuhadarabFK == ruhadarab.RuhadarabID).ToList();
+                    //var list = context.Termék.Select(a => a.RuhadarabFK == ruhadarab.RuhadarabID).ToList();
 
 
                     var rendelések = from x in context.Rendelés

@@ -70,11 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Megjelenítés\eddigirendelesek_ablak.cs">
+    <Compile Include="Megjelenítés\Eddigirendelesek_ablak.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Megjelenítés\eddigirendelesek_ablak.Designer.cs">
-      <DependentUpon>eddigirendelesek_ablak.cs</DependentUpon>
+    <Compile Include="Megjelenítés\Eddigirendelesek_ablak.Designer.cs">
+      <DependentUpon>Eddigirendelesek_ablak.cs</DependentUpon>
     </Compile>
     <Compile Include="Megjelenítés\Paraméterekozzáadása.cs">
       <SubType>UserControl</SubType>
@@ -118,11 +118,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Megjelenítés\rendeles_ablak.cs">
+    <Compile Include="Megjelenítés\Rendeles_ablak.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Megjelenítés\rendeles_ablak.Designer.cs">
-      <DependentUpon>rendeles_ablak.cs</DependentUpon>
+    <Compile Include="Megjelenítés\Rendeles_ablak.Designer.cs">
+      <DependentUpon>Rendeles_ablak.cs</DependentUpon>
     </Compile>
     <Compile Include="Adatbázis\Rendelés.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -144,8 +144,8 @@
       <DependentUpon>Paraméterekmódosítása.cs</DependentUpon>
     </Compile>
     <Compile Include="Segéd\Termek_adat.cs" />
-    <EmbeddedResource Include="Megjelenítés\eddigirendelesek_ablak.resx">
-      <DependentUpon>eddigirendelesek_ablak.cs</DependentUpon>
+    <EmbeddedResource Include="Megjelenítés\Eddigirendelesek_ablak.resx">
+      <DependentUpon>Eddigirendelesek_ablak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Megjelenítés\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -165,8 +165,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Megjelenítés\rendeles_ablak.resx">
-      <DependentUpon>rendeles_ablak.cs</DependentUpon>
+    <EmbeddedResource Include="Megjelenítés\Rendeles_ablak.resx">
+      <DependentUpon>Rendeles_ablak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Megjelenítés\Paraméterekmódosítása.resx">
       <DependentUpon>Paraméterekmódosítása.cs</DependentUpon>

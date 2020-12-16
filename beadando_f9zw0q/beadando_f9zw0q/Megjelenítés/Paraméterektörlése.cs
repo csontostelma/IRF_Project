@@ -69,7 +69,6 @@ namespace beadando_f9zw0q
 
                     terméklista = termekek.ToList();
                     dataGridView1.DataSource = terméklista;
-   
                 }
             }
             catch (Exception ex)
@@ -77,7 +76,6 @@ namespace beadando_f9zw0q
                 MessageBox.Show("Hiba történt a paraméterek beolvasása közben: " + ex.Message);
             }
         }
-
 
         private void button_torles_Click(object sender, EventArgs e)
         {

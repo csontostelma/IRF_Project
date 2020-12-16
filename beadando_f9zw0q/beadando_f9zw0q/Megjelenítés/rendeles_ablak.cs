@@ -130,6 +130,14 @@ namespace beadando_f9zw0q
                             context.SaveChanges();
                     }
 
+                    textBox_nev.Text = null;
+                    textBox_nev.BackColor = Color.White;
+                    listBox_fazon.SelectedItem = null;
+                    comboBox_meret.SelectedItem = null;
+                    listBox_szín.SelectedItem = null;
+                    listBox_tipus.SelectedItem = null;
+                    textBox_ár.Text = null;
+
                     MessageBox.Show("Rendelését rögzítettük!");
                 }
                 else
